@@ -1,7 +1,10 @@
 #!/bin/node
 
-var input_encoding = process.argv.slice(2)[0];
-var output_encoding = process.argv.slice(2)[1];
+const args = process.argv.slice(2);
+
+const input_encoding = args[0];
+if(!input_encoding){throw new Error('Invalid Input')};
+const output_encoding = args[1] || 'utf8';
 
 process.stdin.resume();
 process.stdin.setEncoding(input_encoding);
